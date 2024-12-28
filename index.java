@@ -21,3 +21,11 @@ class Node implements Comparable<Node> {
     public int compareTo(Node other) {
         return Double.compare(this.fCost(), other.fCost());
     }
+
+     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Node node = (Node) obj;
+        return x == node.x && y == node.y;
+    }
