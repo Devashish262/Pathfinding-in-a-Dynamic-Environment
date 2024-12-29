@@ -29,3 +29,20 @@ class Node implements Comparable<Node> {
         Node node = (Node) obj;
         return x == node.x && y == node.y;
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+}
+
+public class DynamicPathfinding {
+    private static final int[] dx = {-1, 1, 0, 0};
+    private static final int[] dy = {0, 0, -1, 1};
+    private final int rows, cols;
+    private final boolean[][] obstacles;
+    
+    public DynamicPathfinding(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+        this.obstacles = new boolean[rows][cols];
+    }
