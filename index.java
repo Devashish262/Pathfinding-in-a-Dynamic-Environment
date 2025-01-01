@@ -104,3 +104,17 @@ public class DynamicPathfinding {
                 }
             }
         }
+         return Collections.emptyList(); 
+    }
+
+    private List<Node> reconstructPath(Node endNode) {
+        List<Node> path = new ArrayList<>();
+        Node current = endNode;
+        while (current != null) {
+            path.add(current);
+            current = current.parent;
+        }
+        Collections.reverse(path);
+        return path;
+    }
+
