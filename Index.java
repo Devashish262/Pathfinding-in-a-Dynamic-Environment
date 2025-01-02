@@ -117,4 +117,20 @@ public class DynamicPathfinding {
         Collections.reverse(path);
         return path;
     }
+      private boolean isValid(int x, int y) {
+        return x >= 0 && x < rows && y >= 0 && y < cols;
+    }
+
+    private double heuristic(int x1, int y1, int x2, int y2) {
+        return Math.abs(x1 - x2) + Math.abs(y1 - y2);
+    }
+
+    public static void main(String[] args) {
+        DynamicPathfinding pathfinding = new DynamicPathfinding(10, 10);
+
+        pathfinding.addObstacle(3, 3);
+        pathfinding.addObstacle(3, 4);
+        pathfinding.addObstacle(3, 5);
+
+        List<Node> path = pathfinding.findPath(0, 0, 7, 7);
 
