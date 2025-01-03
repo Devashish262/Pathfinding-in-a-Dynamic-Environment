@@ -133,4 +133,16 @@ public class DynamicPathfinding {
         pathfinding.addObstacle(3, 5);
 
         List<Node> path = pathfinding.findPath(0, 0, 7, 7);
+        
+                if (path.isEmpty()) {
+            System.out.println("No path found!");
+        } else {
+            System.out.println("Path found:");
+            for (Node node : path) {
+                System.out.printf("(%d, %d) -> ", node.x, node.y);
+            }
+            System.out.println("END");
+        }
+    }
+}
 
